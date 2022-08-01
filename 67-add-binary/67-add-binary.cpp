@@ -15,10 +15,10 @@ public:
          
         
           if(m>=0)
-             sum+=(a[m--])-'0';
+             sum+=a[m--]-'0';
          
           if(n>=0)
-             sum+=(b[n--])-'0';
+             sum+=b[n--]-'0';
         
          if(sum>1)
              carry=1;
