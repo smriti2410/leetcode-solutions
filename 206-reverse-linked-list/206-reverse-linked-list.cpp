@@ -11,16 +11,29 @@
 class Solution {
 public:
     ListNode* reverseList(ListNode* head) {
+ListNode* temp=head;
 
-        if(head==NULL||head->next==NULL) // when linked list has 0 or 1 element
-        {
+        
+        if(head==NULL)
             return head;
+        
+        stack<int>st;
+        
+        while(temp!=NULL){
+            st.push(temp->val);
+            temp=temp->next;
         }
         
-        ListNode* newhead=reverseList(head->next);//recursion se naya head aa gya jo last element hoga
-        head->next->next=head;//
-        head->next=NULL;
+        temp=head;
+       
         
-        return newhead;
+        while(temp!=NULL){
+            temp->val=st.top();
+            st.pop();
+            temp=temp->next;
+        }
+        
+       
+      return head;
     }
 };
