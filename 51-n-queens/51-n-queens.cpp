@@ -14,7 +14,7 @@ public:
         return true;
     }
     void dfs(vector<string> &board, int row){
-        // exit condition
+        // base case
         if(row == board.size()){
             ret.push_back(board);
             return;
